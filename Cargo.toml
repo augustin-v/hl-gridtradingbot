@@ -1,0 +1,58 @@
+[package]
+name = "hl_grid_bot"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Async runtime
+tokio = { version = "1.35", features = ["rt-multi-thread", "macros", "test-util"] }
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# API and Networking
+reqwest = { version = "0.11", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Configuration
+config = "0.13"
+dotenv = "0.15"
+
+# Logging and monitoring
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+# Decimal calculations (crucial for price calculations)
+rust_decimal = "1.32"
+rust_decimal_macros = "1.32"
+
+# Time handling
+chrono = "0.4"
+
+# Async channels for internal communication
+futures = "0.3"
+
+# HL rust sdk for api interactions
+hyperliquid_rust_sdk = "0.5.0"
+
+# For statistical calculations (useful for grid spacing)
+statrs = "0.16"
+
+# For secure handling of API keys and secrets
+secrecy = "0.8"
+
+# For concurrent data structures
+parking_lot = "0.12"
+
+# For efficient async tasks management
+tokio-util = "0.7"
+
+# For rate limiting API calls
+governor = "0.6"
+ethers = "2.0.14"
+
+env_logger = "0.10"
+clap = { version = "4.4", features = ["derive", "env"] }
+nonzero_ext = "0.3.0"
+dialoguer = "0.11.0"
