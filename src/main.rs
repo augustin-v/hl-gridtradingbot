@@ -1,4 +1,5 @@
 use clap::Parser;
+use dotenv::dotenv;
 use ethers::signers::{LocalWallet, Signer};
 use ethers::types::H160;
 use governor::clock::DefaultClock;
@@ -139,6 +140,7 @@ impl GridConfig {
 #[tokio::main]
 async fn main() {
     tracing_subscriber::fmt::init();
+    dotenv().ok();
 
     println!(
         "
